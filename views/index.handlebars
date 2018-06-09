@@ -8,8 +8,12 @@
         {{!-- if NOT devoured then render, so the user knows what's available to be eaten --}}
         {{!-- left column --}}
         {{!-- this. refers to all the single element of the burger array. as it iterates --}}
+        {{!-- similar to saying if not devoured true then render unless devoured is true, then don't render--}}
           {{#unless this.devoured}} 
             <div>
+              {{!-- this.id takes the burger id. --}}
+              {{!-- use method overide package, so we can use put method --}}
+              {{!-- below is the route with the put method included --}}
               <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
                 <button type="submit" class='burgerAvailable'> {{this.burger_name}} </button>
               </form>
